@@ -26,7 +26,6 @@ cloudinary.config(
 # --- (The rest of your app.py code) ---
 
 # connects to database
-@app.route('/')
 def get_db_connection():
     conn = sqlite3.connect('Campus_data.db')
     conn.row_factory = sqlite3.Row
@@ -241,5 +240,6 @@ def upload_avatar():
     except Exception as e:
         print(f"General error: {e}")
         return jsonify({'error': 'Request processing failed'}), 500
+
 
 
